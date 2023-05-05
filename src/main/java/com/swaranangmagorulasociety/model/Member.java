@@ -2,7 +2,6 @@ package com.swaranangmagorulasociety.model;
 
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 @Entity
@@ -24,7 +23,8 @@ public class Member{
     private  String fee;
 
     @Autowired
-    @ManyToOne
+    @JoinTable(name = "dependant")
+    @OneToMany
     private List<Dependant> dependants;
 
 
@@ -82,7 +82,7 @@ public class Member{
         this.dependants = dependants;
     }
 
-//    public LocalDate getStartDate() {
+    //    public LocalDate getStartDate() {
 //        return startDate;
 //    }
 //

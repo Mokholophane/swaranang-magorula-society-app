@@ -14,7 +14,7 @@ public class MemberController {
 
     @PostMapping("/member")
     public int saveMember(@RequestBody Member member) {
-        memberService.addMember(member);
+      memberService.addMember(member);
         return member.getMemberId();
     }
 
