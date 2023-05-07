@@ -24,7 +24,7 @@ public class Member{
 
     @Autowired
     @JoinTable(name = "dependant")
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Dependant> dependants;
 
 

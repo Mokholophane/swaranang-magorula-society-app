@@ -1,6 +1,5 @@
 package com.swaranangmagorulasociety.service;
 
-import com.swaranangmagorulasociety.model.Dependant;
 import com.swaranangmagorulasociety.model.Member;
 import com.swaranangmagorulasociety.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
