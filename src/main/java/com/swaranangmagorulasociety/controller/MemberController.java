@@ -9,16 +9,16 @@ import java.util.List;
 
 @RestController
 public class MemberController {
+
     @Autowired
     private MemberService memberService;
 
     @PostMapping("/member")
-    public int saveMember(@RequestBody Member member) {
-      memberService.addMember(member);
-        return member.getMemberId();
+    public Member saveMember(@RequestBody Member member) {
+        return memberService.addMember(member);
     }
 
-    @GetMapping("/member")
+    @GetMapping("/members")
     public List<Member> getAllMembers() {
         return memberService.getAllMembers();
     }
@@ -33,5 +33,4 @@ public class MemberController {
         memberService.updateMember(member);
         return member;
     }
-
 }

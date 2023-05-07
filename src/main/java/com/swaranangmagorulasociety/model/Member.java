@@ -1,31 +1,33 @@
 package com.swaranangmagorulasociety.model;
 
-import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "member")
-public class Member{
-   @Id
+public class Member {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private int memberId;
 
     @Column
     private String name;
+
     @Column
     private String surname;
+
     @Column
     private String email;
 
     @Column
-    private  String fee;
+    private String fee;
 
-    @Autowired
-    @JoinTable(name = "dependant")
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Dependant> dependants;
+//    @JoinTable(name = "dependant")
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<Dependant> dependants;
 
 
 //    @Column
@@ -74,13 +76,13 @@ public class Member{
         this.fee = fee;
     }
 
-    public List<Dependant> getDependants() {
-        return dependants;
-    }
-
-    public void setDependants(List<Dependant> dependants) {
-        this.dependants = dependants;
-    }
+//    public List<Dependant> getDependants() {
+//        return dependants;
+//    }
+//
+//    public void setDependants(List<Dependant> dependants) {
+//        this.dependants = dependants;
+//    }
 
     //    public LocalDate getStartDate() {
 //        return startDate;

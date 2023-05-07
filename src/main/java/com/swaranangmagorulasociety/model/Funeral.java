@@ -1,7 +1,8 @@
 //package com.swaranangmagorulasociety.model;
 //
-//import jakarta.persistence.*;
 //import org.springframework.beans.factory.annotation.Autowired;
+//
+//import javax.persistence.*;
 //
 //@Entity
 //@Table(name = "funeral")

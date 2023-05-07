@@ -1,10 +1,11 @@
 package com.swaranangmagorulasociety.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "dependant")
 public class Dependant {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column

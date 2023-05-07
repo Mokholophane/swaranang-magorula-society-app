@@ -12,17 +12,17 @@ import java.util.List;
 
 @RestController
 public class DependantController {
+
     @Autowired
     private DependantService dependantService;
 
     @PostMapping("/dependant")
-    public int saveDependant(@RequestBody Dependant dependant){
-        dependantService.addDependant(dependant);
-        return dependant.getId();
+    public Dependant saveDependant(@RequestBody Dependant dependant) {
+        return dependantService.addDependant(dependant);
     }
 
-    @GetMapping("dependant")
-    public List<Dependant> allDependants(){
+    @GetMapping("dependants")
+    public List<Dependant> allDependants() {
         return dependantService.getAllDependants();
     }
 
