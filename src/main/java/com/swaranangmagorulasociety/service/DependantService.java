@@ -13,6 +13,10 @@ public class DependantService {
     @Autowired
     private DependantRepository dependantRepository;
 
+    public DependantService(DependantRepository dependantRepository) {
+        this.dependantRepository = dependantRepository;
+    }
+
     public Dependant addDependant(Dependant dependant){
         return dependantRepository.save(dependant);
     }

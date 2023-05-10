@@ -1,5 +1,6 @@
 package com.swaranangmagorulasociety.controller;
 
+import com.swaranangmagorulasociety.model.Dependant;
 import com.swaranangmagorulasociety.model.Member;
 import com.swaranangmagorulasociety.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,10 @@ public class MemberController {
         memberService.updateMember(member);
         return member;
     }
+
+//    @PostMapping("/memberWithDependants")
+//    public void saveMemberWithDependants(@RequestBody Member member, @RequestBody List<Dependant>dependants ){
+//         memberService.addMemberWithDependants(member,dependants);
+//
+//    }
 }

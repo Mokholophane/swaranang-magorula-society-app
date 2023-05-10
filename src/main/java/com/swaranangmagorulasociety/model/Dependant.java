@@ -8,7 +8,7 @@ public class Dependant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "dependant_id")
     private int id;
 
     @Column
@@ -39,4 +39,5 @@ public class Dependant {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
 }

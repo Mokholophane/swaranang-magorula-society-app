@@ -1,6 +1,7 @@
 package com.swaranangmagorulasociety.service;
 
 import com.swaranangmagorulasociety.model.Member;
+import com.swaranangmagorulasociety.repository.DependantRepository;
 import com.swaranangmagorulasociety.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,9 @@ public class MemberService {
 
     @Autowired
     private final MemberRepository memberRepository;
+
+    @Autowired
+    private DependantRepository dependantRepository;
 
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;

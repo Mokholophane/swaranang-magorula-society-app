@@ -1,8 +1,7 @@
 package com.swaranangmagorulasociety.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "member")
@@ -10,7 +9,7 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "member_id")
     private int memberId;
 
     @Column
@@ -25,9 +24,16 @@ public class Member {
     @Column
     private String fee;
 
-//    @JoinTable(name = "dependant")
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private List<Dependant> dependants;
+    @Column
+    private String address;
+
+    @Column
+    private String mobileNumber;
+
+    @OneToMany(cascade = CascadeType.ALL )
+    @JoinColumn(name = "member_id", referencedColumnName = "member_id")
+    private List<Dependant> dependants;
+
 
 
 //    @Column
@@ -76,13 +82,30 @@ public class Member {
         this.fee = fee;
     }
 
-//    public List<Dependant> getDependants() {
-//        return dependants;
-//    }
-//
-//    public void setDependants(List<Dependant> dependants) {
-//        this.dependants = dependants;
-//    }
+    public List<Dependant> getDependants() {
+        return dependants;
+    }
+
+    public void setDependants(List<Dependant> dependants) {
+        this.dependants = dependants;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
 
     //    public LocalDate getStartDate() {
 //        return startDate;
